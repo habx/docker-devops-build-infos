@@ -1,1 +1,1 @@
-# docker-devops-build-infos
+Build infos generator
