@@ -1,3 +1,4 @@
 FROM python:3-alpine
+WORKDIR /work
 COPY . /build
-RUN /build/run.sh
+CMD /build/run.sh
