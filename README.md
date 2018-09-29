@@ -1,5 +1,25 @@
-Build infos generator
+# Build infos generator
 
+## What is it doing ?
+This generate two files:
+
+- `build.json` looking like this: 
+```json
+{
+    "version": "1.17.0-20180923-2004-174e781-test-sentry-cli",
+    "git_hash": "174e781",
+    "git_date": "20180923-2004",
+    "git_branch": "test/sentry-cli",
+    "build_date": "2018-09-29T21:42:11.091593"
+}
+```
+
+- `version.txt` looking like this:
+```
+1.17.0-20180923-2004-174e781-test-sentry-cli
+```
+
+## Using it
 To test it locally, execute:
 ```bash
 docker run -v $(pwd):/work -ti habx/devops-build-infos
