@@ -8,6 +8,9 @@ Provide a simple and clear way for software to identify their version at build t
 - If you're on a tag, the version will be the tag name
 - Otherwise, the version will be a long named version
 
+### Limitations
+It's currently dependant on a `package.json` to make some checks. This limitation could be easily removed.
+
 ### Generated files
 This generate two files:
 
