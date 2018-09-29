@@ -1,6 +1,14 @@
 # Build infos generator
 
-## What is it doing ?
+## Goals
+Provide a simple and clear way for software to identify their version at build time (and preferably report it at runtime themselves).
+
+## What is it doing
+### Versioning logic
+- If you're on a tag, the version will be the tag name
+- Otherwise, the version will be a long named version
+
+### Generated files
 This generate two files:
 
 - `build.json` looking like this: 
