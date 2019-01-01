@@ -26,15 +26,19 @@ with open("package.json") as f:
     package_json = json.load(f)
 
 # Getting the branch from the CI or local repo
-if os.environ.get('CI_COMMIT_BRANCH'):
+if os.environ.get('CI_COMMIT_BRANCH'):  # drone
     git_branch = os.environ.get('CI_COMMIT_BRANCH')
+elif os.environ.get('CIRCLE_BRANCH'):  # circleci
+    git_branch = os.environ.get('CIRCLE_BRANCH')
 else:
     git_branch = cmd_output("git branch | grep \\* | cut -d ' ' -f2")
 git_branch_clean = re.sub('\\W+', '-', git_branch).lower()
 
 # Getting the tag from the CI or local repo
-if os.environ.get('CI_TAG'):
+if os.environ.get('CI_TAG'):  # drone
     git_tag = os.environ.get('CI_TAG')
+elif os.environ.get('CIRCLE_TAG'):  # circleci
+    git_tag = os.environ.get('CIRCLE_TAG')
 else:
     git_tag = cmd_output("git tag --points-at HEAD")
 
