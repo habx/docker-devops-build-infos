@@ -14,7 +14,7 @@ It's currently dependant on a `package.json` to make some checks. This limitatio
 ### Generated files
 This generate two files:
 
-- `build.json` looking like this: 
+- `build.json` looking like this:
 ```json
 {
     "version": "1.17.0-20180923-2004-174e781-test-sentry-cli",
