@@ -33,7 +33,7 @@ This generate two files:
 ## Using it
 To test it locally, execute:
 ```bash
-docker run -v $(pwd):/work -ti habx/devops-build-infos
+docker run --rm -v $(pwd):/work -ti habx/devops-build-infos
 ```
 
 To use it with drone, add this line to the drone build file:
