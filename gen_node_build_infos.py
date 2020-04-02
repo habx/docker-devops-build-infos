@@ -32,7 +32,13 @@ elif os.environ.get('CIRCLE_BRANCH'):  # circleci
     git_branch = os.environ.get('CIRCLE_BRANCH')
 else:
     git_branch = cmd_output("git branch | grep \\* | cut -d ' ' -f2")
-git_branch_clean = re.sub('\\W+', '-', git_branch).lower()
+    if git_branch == "(HEAD":
+        git_branch = None
+
+if git_branch is not None:
+    git_branch_clean = re.sub('\\W+', '-', git_branch).lower()
+else:
+    git_branch_clean = None
 
 # Getting the tag from the CI or local repo
 if os.environ.get('CI_TAG'):  # drone
