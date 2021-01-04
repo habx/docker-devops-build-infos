@@ -48,7 +48,7 @@ elif os.environ.get('CIRCLE_TAG'):  # circleci
 else:
     git_tag = cmd_output("git tag --points-at HEAD")
 
-git_hash = cmd_output("git show -s --format=%h")
+git_hash = cmd_output("git rev-parse --short=7 HEAD")
 git_date = cmd_output("git show --quiet --format='%ci'")[0:16]
 
 git_date_short = git_date.replace('-', '').replace(' ', '-').replace(':', '')
